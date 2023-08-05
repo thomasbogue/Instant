@@ -29,7 +29,7 @@ def greeting(message):
   return message.channel.send(f"Hello {message.author}, I'm Instant Servant, a Cypher RPG die rolling bot.  Type $help for more details on how I can help")
 
 def help(message):
-  return message.channel.send("Instant Servant:\n  $help\n    show this help\n  $r 3\n    make a level 3 roll\n  $d10 + 3\n    rolls a d10 and adds 3\n  $h +3\n    make a healing roll and add 3\n  $hello\n    Say hi.  Everybody appreciates politeness")
+  return message.channel.send("Instant Servant:\n  $help\n    show this help\n  $r 3\n    make a level 3 roll\n  $d10 + 3\n    rolls a d10 and adds 3\n  $h +3\n    make a healing roll and add 3\n  $hello\n    Say hi.  Everybody appreciates politeness\nYou can also type $roll instead of $r, or $heal instead of $h -- I'm flexible.\nAnd you choose to skip spaces after + signs, or the + sign at all")
 
 def roll(message):
   params = message.content.split()
