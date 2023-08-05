@@ -54,7 +54,7 @@ def roll(message):
 
 def parseBonus(params):
   bonus = 0
-  for param in params[1:]:
+  for param in params:
     try:
       b = int(param)
       bonus = bonus + b
