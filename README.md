@@ -9,4 +9,4 @@ User guide:
   send the message $help in a server with this bot to get help on usage
 
 Todo:
-  error handling when non-integers are passed as messages
+  add a $hero command Easter egg.  Nobody reads the readme, so it'll still be secret
