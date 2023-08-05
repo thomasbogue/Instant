@@ -38,7 +38,10 @@ def roll(message):
   if (len(params) < 2):
     level = 0
   else:
-    level = int(params[1])
+    try:
+      level = int(params[1])
+    except:
+      return message.channel.send(f"I was expecting a number after the $r, but did you say '{params[1]}'?")
   roll = random.randint(1,20)
   target = 3 * level
   success = (roll >= target)
@@ -73,7 +76,10 @@ def heal(message):
 
 def rollD(message):
   params = message.content.split()
-  d = int(params[0][2:])
+  try:
+    d = int(params[0][2:])
+  except:
+    return message.channel.send(f"I was expecting $d6 or $d8, not '{params[0]}'")
   bonus = 0
   if (len(params) > 1):
     bonus = parseBonus(params[1:])
