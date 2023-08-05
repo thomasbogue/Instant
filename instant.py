@@ -14,13 +14,13 @@ async def on_ready():
 async def on_message(message):
   if message.author == client.user:
     return
-  if message.content.startswith('$hello'):
+  if message.content.split()[0] == '$hello':
       await greeting(message)
   if message.content.startswith('$help'):
       await help(message)
   if message.content.startswith('$r') or message.content.startswith('$roll'):
       await roll(message)
-  if message.content.startswith('$h') or message.content.startswith('$heal'):
+  if message.content.split()[0] == '$h' or message.content.startswith('$heal'):
       await heal(message)
   if message.content.startswith('$d'):
       await rollD(message)
