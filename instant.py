@@ -49,13 +49,13 @@ def roll(message):
   success = (roll >= target)
   success_message = ""
   if success:
-      success_message = "Success!"
+      success_message = "**Success!**"
   else:
-      success_message = "Failed."
+      success_message = "**Failed.**"
   m = success_message
   if roll in special_rolls.keys():
       m = f"{m}\n{special_rolls[roll]}."
-  return message.channel.send(f"{message.author.display_name} rolled a {roll}, and the target was {target}\n{m}")
+  return message.channel.send(f">>> {message.author.display_name} rolled a **{roll}**, and the target was {target}\n{m}")
 
 def parseBonus(params):
   bonus = 0
@@ -74,9 +74,9 @@ def heal(message):
     bonus = parseBonus(params[1:])
   roll = random.randint(1,6)
   if (bonus == 0):
-    reply = f"{message.author.display_name} rolled {roll} on their heal roll"
+    reply = f">>> {message.author.display_name} rolled **{roll}** on their heal roll"
   else:
-    reply = f"{message.author.display_name} rolled {roll} + {bonus} = {roll + bonus} on their heal roll"
+    reply = f">>> {message.author.display_name} rolled **{roll}** + {bonus} = {roll + bonus} on their heal roll"
   return message.channel.send(reply)
 
 def rollD(message):
@@ -90,9 +90,9 @@ def rollD(message):
     bonus = parseBonus(params[1:])
   roll = random.randint(1, d)
   if bonus == 0:
-    reply = f"{message.author.display_name} rolled {roll} on 1d{d}"
+    reply = f">>> {message.author.display_name} rolled **{roll}** on 1d{d}"
   else:
-    reply = f"{message.author.display_name} rolled {roll} + {bonus} = {roll + bonus} on 1d{d} + {bonus}"
+    reply = f">>> {message.author.display_name} rolled **{roll}** + {bonus} = {roll + bonus} on 1d{d} + {bonus}"
   return message.channel.send(reply)
 
 client.run(token)
