@@ -10,3 +10,5 @@ User guide:
 
 Todo:
   add a $hero command Easter egg.  Nobody reads the readme, so it'll still be secret
+  add note about who requested the roll
+  add notes for special rolls (1,18,19,20)
