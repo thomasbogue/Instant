@@ -50,7 +50,7 @@ def roll(message):
       success_message = "Success!"
   else:
       success_message = "Failed."
-  return message.channel.send(f"{success_message}  You rolled a {roll}, and the target was {target}")
+  return message.channel.send(f"{success_message}  {message.author} rolled a {roll}, and the target was {target}")
 
 def parseBonus(params):
   bonus = 0
@@ -69,9 +69,9 @@ def heal(message):
     bonus = parseBonus(params[1:])
   roll = random.randint(1,6)
   if (bonus == 0):
-    reply = f"You rolled {roll} on your heal roll"
+    reply = f"{message.author} rolled {roll} on their heal roll"
   else:
-    reply = f"You rolled {roll} + {bonus} = {roll + bonus} on your heal roll"
+    reply = f"{message.author} rolled {roll} + {bonus} = {roll + bonus} on their heal roll"
   return message.channel.send(reply)
 
 def rollD(message):
@@ -85,9 +85,9 @@ def rollD(message):
     bonus = parseBonus(params[1:])
   roll = random.randint(1, d)
   if bonus == 0:
-    reply = f"You rolled {roll} on 1d{d}"
+    reply = f"{message.author} rolled {roll} on 1d{d}"
   else:
-    reply = f"You rolled {roll} + {bonus} = {roll + bonus} on 1d{d} + {bonus}"
+    reply = f"{message.author} rolled {roll} + {bonus} = {roll + bonus} on 1d{d} + {bonus}"
   return message.channel.send(reply)
 
 client.run(token)
