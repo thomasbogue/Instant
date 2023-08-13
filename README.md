@@ -13,7 +13,3 @@ Features:
   Cypher roll against level
   dN roll
   note about who requested the roll
-
-Todo:
-  add a $hero command Easter egg.  Nobody reads the readme, so it'll still be secret
-  add notes for special rolls (1,18,19,20)

@@ -18,11 +18,13 @@ async def on_message(message):
     return
   if message.content.split()[0] == '$hello':
       await greeting(message)
-  if message.content.startswith('$help'):
+  if message.content.split()[0] == '$help':
       await help(message)
-  if message.content.startswith('$r') or message.content.startswith('$roll'):
+  if message.content.split()[0] == '$r' or message.content.split()[0] == '$roll':
       await roll(message)
-  if message.content.split()[0] == '$h' or message.content.startswith('$heal'):
+  if message.content.split()[0] == '$hero':
+      await hero(message)
+  if message.content.split()[0] == '$h' or message.content.split()[0]'$heal':
       await heal(message)
   if message.content.startswith('$d'):
       await rollD(message)
@@ -84,7 +86,7 @@ def rollD(message):
   try:
     d = int(params[0][2:])
   except:
-    return message.channel.send(f"I was expecting $d6 or $d8, not '{params[0]}'")
+    return message.channel.send(f"I was expecting $d6 or $d8, not '{params[0]}.  What did you want me to do?'")
   bonus = 0
   if (len(params) > 1):
     bonus = parseBonus(params[1:])
@@ -94,5 +96,8 @@ def rollD(message):
   else:
     reply = f">>> {message.author.display_name} rolled **{roll}** + {bonus} = {roll + bonus} on 1d{d} + {bonus}"
   return message.channel.send(reply)
+
+def hero(message):
+  return message.channel.send(f"You've got this {message.author.display_name}.  You're the hero here.")
 
 client.run(token)
