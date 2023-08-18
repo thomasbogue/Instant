@@ -24,7 +24,7 @@ async def on_message(message):
       await roll(message)
   if message.content.split()[0] == '$hero':
       await hero(message)
-  if message.content.split()[0] == '$h' or message.content.split()[0]'$heal':
+  if message.content.split()[0] == '$h' or message.content.split()[0] == '$heal':
       await heal(message)
   if message.content.startswith('$d'):
       await rollD(message)
